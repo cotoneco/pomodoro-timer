@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポモドーロタイマー</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- おしゃれなフォントをGoogle Fontsから読み込みます -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- タイマー全体を囲むボックス -->
+    <div class="timer-container">
+        <!-- 円形プログレスバーと時間表示のエリア -->
+        <div class="timer-display-container">
+            <!-- 円形プログレスバーのSVG -->
+            <svg class="progress-ring" width="220" height="220">
+                <!-- 背景の円 -->
+                <circle class="progress-ring__bg" stroke-width="10" fill="transparent" r="100" cx="110" cy="110"/>
+                <!-- 進捗を示す円 -->
+                <circle id="progress-ring" class="progress-ring__fg" stroke-width="10" fill="transparent" r="100" cx="110" cy="110"/>
+            </svg>
+            <!-- 時間を表示するエリア -->
+            <div id="timer-display">25:00</div>
+        </div>
+
+        <!-- 猫の動画 -->
+        <video id="cat-video" src="neco.mp4" loop muted playsinline class="hidden"></video>
+
+        <!-- ボタンをまとめるエリア -->
+        <div class="buttons">
+            <button id="start-btn">スタート</button>
+            <button id="pause-btn">一時停止</button>
+            <button id="reset-btn">リセット</button>
+        </div>
+    </div>
+
+    <!-- 猫の動画 -->
+    <video id="cat-video" src="neco.mp4" loop muted playsinline class="hidden"></video>
+
+    <!-- JavaScriptファイルを読み込みます -->
+    <script src="script.js"></script>
+</body>
+</html>

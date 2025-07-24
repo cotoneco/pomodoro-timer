@@ -1,0 +1,129 @@
+/* 全体のスタイル設定 */
+body {
+    /* 背景色を優しいピンクに */
+    background-color: #fdeef1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #5c4b51; /* 基本の文字色を少し茶色がかった色に */
+}
+
+/* タイマー全体を囲むボックスのスタイル */
+.timer-container {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(211, 153, 169, 0.2);
+    text-align: center;
+}
+
+/* 円と時間表示を重ねるためのコンテナ */
+.timer-display-container {
+    position: relative; /* 子要素を相対的に配置するための基準 */
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 30px; /* 中央揃えと下に余白 */
+}
+
+/* 時間表示エリアのスタイル */
+#timer-display {
+    /* 位置をコンテナの中央に固定 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 56px; /* 少し小さくして円に収める */
+    font-weight: 700;
+    color: #d399a9; /* 文字色をテーマカラーに */
+}
+
+/* 円形プログレスバーのSVG全体 */
+.progress-ring {
+    transform: rotate(-90deg); /* 12時の位置から開始するように回転 */
+}
+
+/* 円の共通スタイル */
+.progress-ring__bg, .progress-ring__fg {
+    transition: stroke-dashoffset 0.3s linear;
+}
+
+/* 背景の円のスタイル */
+.progress-ring__bg {
+    stroke: #fdeef1; /* 背景円の色 */
+}
+
+/* 進捗を示す円のスタイル */
+.progress-ring__fg {
+    stroke: #e8a0bf; /* 進捗円の色 */
+    stroke-linecap: round; /* 線の端を丸くする */
+}
+
+
+/* ボタンを囲むエリアのスタイル */
+.buttons {
+    display: flex;
+    justify-content: center; /* ボタンを中央に揃える */
+    gap: 15px;
+}
+
+/* すべてのボタンに共通のスタイル */
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: 'Noto Sans JP', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(211, 153, 169, 0.15);
+}
+
+/* スタートボタンのスタイル */
+#start-btn {
+    background-color: #e8a0bf; /* テーマカラー */
+    color: white;
+}
+#start-btn:hover {
+    background-color: #d399a9;
+}
+
+/* 一時停止ボタンのスタイル */
+#pause-btn {
+    color: #d399a9;
+    border: 2px solid #fdeef1;
+}
+#pause-btn:hover {
+    background-color: #fdeef1;
+}
+
+/* リセットボタンのスタイル */
+#reset-btn {
+    color: #d399a9;
+    border: 2px solid #fdeef1;
+}
+#reset-btn:hover {
+    background-color: #fdeef1;
+}
+
+/* --- 猫の動画のスタイル --- */
+#cat-video {
+    width: 100%; /* 親要素の幅に合わせる */
+    max-width: 200px; /* 最大幅を指定 */
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto 20px; /* 上下左右中央揃えと、下に余白 */
+    display: block; /* 中央揃えのためにblock要素にする */
+    transition: opacity 0.5s ease;
+}
+
+/* 動画を非表示にするためのクラス */
+.hidden {
+    opacity: 0;
+    pointer-events: none; /* クリックできないようにする */
+}
+
